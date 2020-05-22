@@ -2,7 +2,7 @@ import getOptionalUrlParam from './get-optional-url-param'
 
 export default function getBaseUrl(trackingId, userId) {
   return (
-    'https://www.google-analytics.com/collect' +
+    window.ga_api ? window.ga_api : 'https://www.google-analytics.com/collect' +
     '?v=1' +
     '&ul=en-us' +
     '&de=UTF-8' +

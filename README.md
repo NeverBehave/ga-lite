@@ -27,6 +27,12 @@ script to your website:
 ;c.parentNode.insertBefore(a,c)
 })(window,document,"galite","script","https://cdn.jsdelivr.net/npm/ga-lite@2/dist/ga-lite.min.js");
 
+// You may define your own endpoint as ga_api
+windows.ga_api = "your api" // default https://www.google-analytics.com/collect
+
+// You may use cf-worker as backend.
+// Example in scripts/cf-worker.js
+
 galite('create', 'UA-XXXXXXXX-X', 'auto');
 galite('send', 'pageview');
 </script>
