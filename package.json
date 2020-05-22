@@ -9,7 +9,7 @@
     "test:unit": "jest ./__tests__/src/*.js",
     "test": "yarn test:browser && yarn test:unit",
     "cover": "yarn test:unit --coverage && cat ./coverage/lcov.info | coveralls",
-    "build": "webpack",
+    "build": "webpack && cp dist/ga-lite.min.js dist/optimize.min.js",
     "release": "./do_release.sh",
     "lint": "yarn lint:eslint && yarn lint:prettier",
     "lint:eslint": "eslint ./src/{**/,}*.js ./__tests__/**/*.js",

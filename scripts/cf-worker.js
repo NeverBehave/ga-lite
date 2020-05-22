@@ -5,7 +5,7 @@ const UrlPrefix = "optical"; // pls replace with random  string
 const EndPointScramble = "blog"; // pls replace with random string
 const EndPoint = "collect";
 const GAHostname = "www.google-analytics.com";
-const AllowedReferrer = 'skk.moe';  // ['skk.moe', 'suka.js.org'] multiple domains is supported in array format
+const AllowedReferrer = ['never.pet', 'blog.never.pet', 'localhost:3000'];  // ['skk.moe', 'suka.js.org'] multiple domains is supported in array format
 
 addEventListener('fetch', event => {
     event.passThroughOnException();
@@ -52,13 +52,18 @@ async function proxy(event) {
             statusText: 'Forbidden'
         });
     }
-
+    
     //removing prefix http://example.com/PREFIX/Scramble?v => http://example.com/Scramble?v
     url.pathname = url.pathname.replace("/" + UrlPrefix, '');
     //unscramble => http://example.com/Scramble?v => http://example.com/collect?v
     url.pathname = url.pathname.replace(EndPointScramble, EndPoint);
     url.hostname = GAHostname;
     url.searchParams.set('uip', event.request.headers.get('CF-Connecting-IP'));
-    const response = await fetch(url, event.request);
-    return response;
+    
+    // No need to wait for the response, just a gif
+    fetch(url, event.request);
+    
+    return new Response('', {
+        status: 204
+    });
 }

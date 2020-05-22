@@ -185,7 +185,7 @@ function getOptionalStr(key) {
 // CONCATENATED MODULE: ./src/get-base-url.js
 
 function getBaseUrl(trackingId, userId) {
-  return window.ga_api ? window.ga_api : 'https://www.google-analytics.com/collect' + '?v=1' + '&ul=en-us' + '&de=UTF-8' + getOptionalStr('dl', [document.location.href]) + getOptionalStr('dt', [document.title]) + getOptionalStr('sd', [window.screen.colorDepth, '-bit']) + getOptionalStr('sr', [window.screen.availWidth, 'x', window.screen.availHeight]) + getOptionalStr('vp', [window.innerWidth, 'x', window.innerHeight]) + getOptionalStr('dr', [document.referrer]);
+  return (window.ga_api ? window.ga_api : 'https://www.google-analytics.com/collect') + '?v=1' + '&ul=en-us' + '&de=UTF-8' + getOptionalStr('dl', [document.location.href]) + getOptionalStr('dt', [document.title]) + getOptionalStr('sd', [window.screen.colorDepth, '-bit']) + getOptionalStr('sr', [window.screen.availWidth, 'x', window.screen.availHeight]) + getOptionalStr('vp', [window.innerWidth, 'x', window.innerHeight]) + getOptionalStr('dr', [document.referrer]);
 }
 // CONCATENATED MODULE: ./src/object-to-query-string.js
 function objectToQueryString() {
