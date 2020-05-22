@@ -4,7 +4,7 @@ export default function getBaseUrl(trackingId, userId) {
   return (
     (window.ga_api ? window.ga_api : 'https://www.google-analytics.com/collect') +
     '?v=1' +
-    '&ul=en-us' +
+    `&ul=${window.navigator.language ? window.navigator.language : 'en-us'}` +
     '&de=UTF-8' +
     getOptionalUrlParam('dl', [document.location.href]) +
     getOptionalUrlParam('dt', [document.title]) +
