@@ -25,7 +25,7 @@ script to your website:
 (function(e,t,n,i,s,a,c){e[n]=e[n]||function(){(e[n].q=e[n].q||[]).push(arguments)}
 ;a=t.createElement(i);c=t.getElementsByTagName(i)[0];a.async=true;a.src=s
 ;c.parentNode.insertBefore(a,c)
-})(window,document,"galite","script","https://cdn.jsdelivr.net/npm/ga-lite@2/dist/ga-lite.min.js");
+})(window,document,"galite","script","https://cdn.jsdelivr.net/gh/neverbehave/ga-lite@master/dist/ga-lite.min.js");
 
 // You may define your own endpoint as ga_api
 windows.ga_api = "your api" // default https://www.google-analytics.com/collect
